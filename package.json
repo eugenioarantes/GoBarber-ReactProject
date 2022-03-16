@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "polished": "^4.1.4",
+    "react-icons": "^4.3.1",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.24"
+  }
+}
