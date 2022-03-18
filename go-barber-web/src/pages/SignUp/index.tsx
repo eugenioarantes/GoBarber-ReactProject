@@ -8,7 +8,7 @@ import getValidationErrors from '../../utils/getValidationErrors';
 
 import * as Yup from 'yup';
 
-import Input from '../../components/input';
+import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 const SignUp: React.FC = () => {
