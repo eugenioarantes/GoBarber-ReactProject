@@ -11,7 +11,8 @@ import getValidationErrors from '../../utils/getValidationErrors';
 
 import {Link} from 'react-router-dom';
 
-import { useAuth } from '../../hooks/AuthContext';
+import { useAuth } from '../../hooks/auth';
+import { useToast } from '../../hooks/toast';
 
 interface SignInFormData {
   email: string;
@@ -23,6 +24,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useAuth();
+  const { addToast } = useToast();
 
   const handleSubmit = useCallback(async (data: SignInFormData) => {
     try {
@@ -38,19 +40,26 @@ const SignIn: React.FC = () => {
         abortEarly: false,
       });
 
-      signIn({
+      await signIn({
         email: data.email,
         password: data.password,
       });
-    } catch (err: any) {
+    } catch (err) {
 
-      console.log(err);
+      if (err instanceof Yup.ValidationError) {
+        const errors = getValidationErrors(err);
+        formRef.current?.setErrors(errors);
+      }
 
-      const errors = getValidationErrors(err);
+      addToast({
+        type: 'error',
+        title: 'Erro na autenticação',
+        description: 'Ocorreu um erro ao fazer login, cheque as credenciais.',
+      });
 
-      formRef.current?.setErrors(errors);
     }
-  }, [signIn]);
+  }, [signIn, addToast],
+  );
 
   return (
   
