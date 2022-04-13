@@ -1,4 +1,4 @@
-import React, {useCallback, useRef} from 'react';
+import React, {ChangeEvent, useCallback, useRef} from 'react';
 import {
    Container,
    Content,
@@ -20,6 +20,7 @@ import * as Yup from 'yup';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { useAuth } from '../../hooks/auth';
+import api from '../../services/api';
 
 interface ProfileFormData {
   name: string;
@@ -33,7 +34,7 @@ const Profile: React.FC = () => {
   const {addToast} = useToast();
   const history = useHistory();
 
-  const {user} = useAuth();
+  const {user, updateUser} = useAuth();
 
   const handleSubmit = useCallback(async (data: ProfileFormData) => {
     try {
@@ -75,6 +76,23 @@ const Profile: React.FC = () => {
     }
   }, [addToast, history]);
 
+  const handleAvatarChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const data = new FormData();
+
+      data.append('avatar', e.target.files[0] )
+
+      api.patch('/users/avatar', data).then((response) => {
+        updateUser(response.data);
+
+        addToast({
+          type: 'success',
+          title: 'Avatar atualizado!',
+        });
+      });
+    }
+  }, [addToast, updateUser]);
+
   return (
     <Container>
 
@@ -102,9 +120,11 @@ const Profile: React.FC = () => {
             src={"https://avatars.githubusercontent.com/u/79596096?v=4"}
             alt="Eugenio Junior"
           />
-          <button type="button">
+          <label htmlFor='avatar'>
             <FiCamera />
-          </button>
+
+            {/* <input type="file" id="avatar" onChange={handleAvatarChange} /> */}
+          </label>
         </AvatarInput>
 
         <h1>Meu perfil</h1>
