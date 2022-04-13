@@ -89,10 +89,10 @@ const Profile: React.FC = () => {
     <Content>
       <Form 
         ref={formRef} 
-        initialData={{
-          name: user.name,
-          email: user.email,
-        }}
+        // initialData={{
+        //   name: user.name,
+        //   email: user.email,
+        // }}
         onSubmit={handleSubmit}
       >
 
