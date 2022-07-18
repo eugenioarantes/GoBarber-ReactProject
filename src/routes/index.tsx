@@ -11,16 +11,14 @@ import Route from "./Route";
 
 const Router: React.FC = () => (
   <Switch>
-    <Route path="/" exact component={Dashboard} />
-    {/* <Route path="/" exact component={SignIn} /> */}
+    <Route path="/" exact component={SignIn} />
+
     <Route path="/signup"  component={SignUp} />
     <Route path="/forgot-password" component={ForgotPassword} />
     <Route path="/reset-password" component={ResetPassword} />
 
-    <Route path="/profile" component={Profile} /> 
-    {/* <Route path="/profile" component={Profile} isPrivate />  */}
-    
-    {/* <Route path="/dashboard" component={Dashboard} isPrivate /> */}
+    <Route path="/profile" component={Profile} isPrivate /> 
+    <Route path="/dashboard" component={Dashboard} isPrivate />
   </Switch>
 );
 

@@ -69,31 +69,31 @@ const Profile: React.FC = () => {
         abortEarly: false,
       });
 
-      // const {
-      //   name,
-      //   email,
-      //   old_password,
-      //   password,
-      //   password_confirmation,
-      // } = data;
+      const {
+        name,
+        email,
+        old_password,
+        password,
+        password_confirmation,
+      } = data;
 
-      // const formData = {
-      //   name,
-      //   email,
-      //   ...(old_password
-      //     ? {
-      //       old_password,
-      //       password,
-      //       password_confirmation,
-      //       }
-      //     : {}),
-      // };
+      const formData = {
+        name,
+        email,
+        ...(old_password
+          ? {
+            old_password,
+            password,
+            password_confirmation,
+            }
+          : {}),
+      };
 
-      // const response = await api.put('/profile', formData);
+      const response = await api.put('/profile', formData);
 
-      // updateUser(response.data);
+      updateUser(response.data);
 
-      // history.push('/dashboard');
+      history.push('/dashboard');
 
       addToast({
         type: 'success',
@@ -147,23 +147,20 @@ const Profile: React.FC = () => {
     <Content>
       <Form 
         ref={formRef} 
-        // initialData={{
-        //   name: user.name,
-        //   email: user.email,
-        // }}
+        initialData={{
+          name: user.name,
+          email: user.email,
+        }}
         onSubmit={handleSubmit}
       >
 
       <AvatarInput>
-          {/* <img src={user.avatar_url} alt={user.name} /> */}
-          <img  
-            src={"https://avatars.githubusercontent.com/u/79596096?v=4"}
-            alt="Eugenio Junior"
-          />
+          <img src={user.avatar_url} alt={user.name} />
+
           <label htmlFor='avatar'>
             <FiCamera />
 
-            {/* <input type="file" id="avatar" onChange={handleAvatarChange} /> */}
+            <input type="file" id="avatar" onChange={handleAvatarChange} />
           </label>
         </AvatarInput>
 

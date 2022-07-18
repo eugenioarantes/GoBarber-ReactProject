@@ -42,6 +42,8 @@ const ResetPassword: React.FC = () => {
         abortEarly: false,
       });
 
+      history.push('/');
+
       const { password, password_confirmation } = data;
       const token = location.search.replace('?token=', '');
 
@@ -49,13 +51,12 @@ const ResetPassword: React.FC = () => {
         throw new Error();
       }
 
-      // await api.post('password/reset', {
-      //   password,
-      //   password_confirmation,
-      //   token,
-      // })
+      await api.post('password/reset', {
+        password,
+        password_confirmation,
+        token,
+      })
 
-      history.push('/');
     } catch (err) {
 
       if (err instanceof Yup.ValidationError) {

@@ -13,6 +13,7 @@ import * as Yup from 'yup';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import api from '../../services/api';
 
 interface SignUpFormData {
   name: string;
@@ -41,7 +42,7 @@ const SignUp: React.FC = () => {
         abortEarly: false,
       });
 
-      //await api.post('/users', data);
+      await api.post('/users', data);
 
       history.push('/');
 

@@ -36,7 +36,7 @@ export const Container = styled.div<ContainerProps>`
     margin-top: 8px;
   }
 
-  /* ${props => toastTypeVariations[props.type || 'info']} */
+  ${props => toastTypeVariations[props.type || 'info']}
 
   > svg {
     margin: 4px 12px 0 0;
