@@ -1,5 +1,10 @@
 # Go Barber Project
 
+
+
+
+
+
 <img 
   alt="modal" 
   width="1000px" 
