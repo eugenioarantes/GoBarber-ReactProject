@@ -1,7 +1,14 @@
 # Go Barber Project
 
-<img 
-  alt="modal" 
-  width="1000px" 
-  src="https://github.com/eugenioarantes/GoBarber-ReactProject/blob/master/src/assets/login-gobarber.gif" 
-/>
+<h1 align="center">
+    <img alt="Gobarber" src="go-barber-home.svg" width="250px" />
+</h1>
+
+<br><br>
+
+<h1 align="center">
+  <img 
+    alt="modal" 
+    src="https://github.com/eugenioarantes/GoBarber-ReactProject/blob/master/src/assets/login-gobarber.gif" 
+  />
+</h1>
