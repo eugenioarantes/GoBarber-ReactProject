@@ -6,6 +6,8 @@
 
 <br><br>
 
+## Register/Login
+
 <h1 align="center">
   <img 
     alt="modal" 
