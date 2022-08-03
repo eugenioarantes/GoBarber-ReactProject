@@ -6,7 +6,7 @@
 
 <br><br>
 
-## Register/Login
+### Register/Login
 
 <h1 align="center">
   <img 
