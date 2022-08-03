@@ -1,7 +1,7 @@
 # Go Barber Project
 
 <h1 align="center">
-    <img alt="Gobarber" src="go-barber-home.svg" width="250px" />
+    <img alt="Gobarber" src="go-barber-home.svg" />
 </h1>
 
 <br><br>
