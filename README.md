@@ -1,7 +1,7 @@
 # Go Barber Project
 
 <h1 align="center">
-    <img alt="Gobarber" src="go-barber-home.svg" />
+    <img alt="Gobarber" src="https://github.com/eugenioarantes/GoBarber-ReactProject/blob/master/src/assets/go-barber-home.svg" width="250px" />
 </h1>
 
 <br><br>
