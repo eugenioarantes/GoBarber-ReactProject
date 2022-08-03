@@ -1,9 +1,6 @@
 # Go Barber Project
 
-
-
-
-
+<br><br><br><br><br>
 
 <img 
   alt="modal" 
